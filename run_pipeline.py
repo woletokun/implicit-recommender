@@ -1,10 +1,39 @@
+# run_pipeline.py
+
 from utils.data_preprocessing import load_and_preprocess
-from models.als_model import train_als_model
 
-matrix, df, user_encoder, item_encoder = load_and_preprocess('data/raw/implicit_data.csv')
-model = train_als_model(matrix)
+# Sample input file path (adjust if needed)
+csv_path = "data/raw/interactions.csv"
 
-user_idx = 0
-recommendations = model.recommend(user_idx, matrix[user_idx], N=5)
-items = [item_encoder.inverse_transform([i])[0] for i, _ in recommendations]
-print(f'Recommended items for user {user_idx}:', items)
+matrix, df, user_encoder, item_encoder = load_and_preprocess(csv_path)
+
+print("✅ Data loaded and preprocessed successfully!")
+print("🧮 Matrix shape:", matrix.shape)
+print("🔢 Sample encoded users:\n", df[['user_id', 'user_idx']].drop_duplicates().head())
+print("🔢 Sample encoded items:\n", df[['item_id', 'item_idx']].drop_duplicates().head())
+# run_pipeline.py
+
+from utils.data_preprocessing import load_and_preprocess
+
+# Sample input file path (adjust if needed)
+csv_path = "data/raw/interactions.csv"
+
+matrix, df, user_encoder, item_encoder = load_and_preprocess(csv_path)
+
+print("✅ Data loaded and preprocessed successfully!")
+print("🧮 Matrix shape:", matrix.shape)
+print("🔢 Sample encoded users:\n", df[['user_id', 'user_idx']].drop_duplicates().head())
+print("🔢 Sample encoded items:\n", df[['item_id', 'item_idx']].drop_duplicates().head())
+# run_pipeline.py
+
+from utils.data_preprocessing import load_and_preprocess
+
+# Sample input file path (adjust if needed)
+csv_path = "data/raw/interactions.csv"
+
+matrix, df, user_encoder, item_encoder = load_and_preprocess(csv_path)
+
+print("✅ Data loaded and preprocessed successfully!")
+print("🧮 Matrix shape:", matrix.shape)
+print("🔢 Sample encoded users:\n", df[['user_id', 'user_idx']].drop_duplicates().head())
+print("🔢 Sample encoded items:\n", df[['item_id', 'item_idx']].drop_duplicates().head())
