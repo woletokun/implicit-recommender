@@ -1,0 +1,5 @@
+user_id,item_id,event_type,timestamp
+u1,i1,click,2025-07-01
+u2,i2,view,2025-07-02
+u1,i2,purchase,2025-07-03
+u3,i3,click,2025-07-04
