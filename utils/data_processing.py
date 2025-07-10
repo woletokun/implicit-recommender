@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from scipy.sparse import coo_matrix
 
-def load_and_preprocess(csv_path):
+def load_and_process(csv_path):
     df = pd.read_csv(csv_path)
 
     # Convert event types to weights
